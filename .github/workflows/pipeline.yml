@@ -1,15 +1,13 @@
 name: End-to-end tests
-on: [push]
+on:
+  push:
+    branches:
+      - '**'
 jobs:
   cypress-run:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-      # - name: Cypress run
-      #   run: yarn install
-      #   uses: cypress-io/github-action@v2
       - name: Run cypress tests
-        run: cd cypress-dashboard-app && docker-compose up -d
+        run: cd cypress-dashboard-app && docker-compose up
