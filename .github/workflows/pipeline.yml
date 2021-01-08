@@ -9,6 +9,6 @@ jobs:
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
-      - uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v2
       - name: Run cypress tests
         run: cd cypress-dashboard-app && docker-compose up -d
